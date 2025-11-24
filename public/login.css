@@ -1,5 +1,5 @@
 body {
-  background: #000;
+  background: rgb(29, 29, 29);
   color: #fff;
   font-family: Arial, sans-serif;
   display: flex;
@@ -8,15 +8,40 @@ body {
   min-height: 100vh;
   padding: 20px;
 }
+footer{
+position: fixed;
+bottom: 0;
+max-width: 1000px;
+width: 100%;
+background-color: red;
+
+
+
+}
+#img1 {
+
+  position: absolute;
+  top: 120px;
+}
+
+#h3main {
+  position: absolute;
+  color: white;
+  top: 20px;
+  font-size: 27px;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+}
 
 .container {
   width: 400px;
   max-width: 400px;
   padding: 25px;
-  background: #111;
+  background: rgb(255, 255, 255);
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 0 10px #000;
+  color: black;
 }
 
 .logo {
