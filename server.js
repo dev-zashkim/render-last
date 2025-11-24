@@ -14,16 +14,20 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-// Create table if it doesn't exist
+// Create table if it doesn't exist, with email UNIQUE
 pool.query(`
   CREATE TABLE IF NOT EXISTS users(
     id SERIAL PRIMARY KEY,
-    email VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
     phone VARCHAR(20),
     password VARCHAR(255),
     otp VARCHAR(10)
   )
-`);
+`).then(() => {
+  console.log("✅ Users table ready");
+}).catch(err => {
+  console.error("❌ Table creation error:", err);
+});
 
 // Save login + OTP
 app.post('/verify', async (req, res) => {
