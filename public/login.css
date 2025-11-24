@@ -1,39 +1,89 @@
 body {
-  background: #111;
-  color: white;
-  font-family: Arial;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 .container {
-  background: #222;
-  padding: 30px;
-  width: 350px;
-  border-radius: 10px;
+  width: 400px;
+  max-width: 400px;
+  padding: 25px;
+  background: #111;
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 0 10px #000;
 }
 
-input {
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.input-field {
   width: 90%;
-  padding: 10px;
-  margin-top: 10px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
+  padding: 14px;
+  margin-top: 12px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 15px;
 }
 
-button {
-  width: 95%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #1a73e8;
-  border: none;
+.input-field:focus {
+  border: 1px solid #ff0050;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  background: #ff0050;
   color: white;
-  border-radius: 5px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.loading {
+  color: transparent !important;
+}
+
+.btn.loading::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.otp-area h4 {
+  margin-top: 20px;
 }
 
 .otp-boxes {
@@ -44,13 +94,40 @@ button {
 }
 
 .otp {
-  width: 40px;
-  height: 40px;
+  width: 14vw;
+  max-width: 48px;
+  height: 48px;
+  background: #1a1a1a;
+  border: 1px solid #333;
   text-align: center;
-  font-size: 20px;
-  border-radius: 5px;
+  font-size: 22px;
+  color: #fff;
+  border-radius: 8px;
 }
 
 .hidden {
   display: none;
+}
+
+#timer {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.error {
+  color: #ff4d4d;
+  font-size: 13px;
+  text-align: left;
+  width: 90%;
+  margin: 5px auto 0;
+  display: block;
+  min-height: 18px;
+}
+
+.success {
+  color: #00ff7f;
+  font-size: 14px;
+  margin-top: 8px;
+  display: block;
 }
